@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="css/styles.css" />
 
-    <script src="js/scripts.js" defer></script>
+    <script src="js/scripts.js" type="module" defer></script>
   </head>
   <body>
     <!-- Main document -->
@@ -19,7 +19,7 @@
         <h1>Bon de commande de véhicule</h1>
 
         <!-- The form -->
-        <form action="" id="orderForm">
+        <form action="" id="orderForm" novalidate>
           <div class="form-group">
             <label for="orderDate">
               Date du bon de commande : <small>format JJ/MM/AAAA</small>
@@ -29,6 +29,7 @@
               class="form-control"
               name="orderdate"
               id="orderDate"
+              required
             />
           </div>
           <div class="form-group">
@@ -44,7 +45,7 @@
           </div>
           <div class="form-group">
             <label for="orderBrand"> Marque : </label>
-            <select class="form-control" namme="orderbrand" id="orderBrand">
+            <select class="form-control" name="orderbrand" id="orderBrand" required>
               <option value="Renault">Renault</option>
               <option value="Peugeot">Peugeot</option>
               <option value="Toyota">Toyota</option>
@@ -59,10 +60,13 @@
               class="form-control"
               name="ordercolor"
               id="orderColor"
+              required
             />
           </div>
+
           <div class="form-group top">
             <span class="label"> Option : </span>
+
             <div class="form-options">
               <label for="orderOption01">
                 <input
@@ -71,6 +75,7 @@
                   name="orderoption"
                   id="orderOption01"
                   value="Vitres électriques"
+                  required
                 />
                 Vitres électriques
               </label>
@@ -81,6 +86,7 @@
                   name="orderoption"
                   id="orderOption02"
                   value="GPS"
+                  required
                 />
                 GPS
               </label>
@@ -91,6 +97,7 @@
                   name="orderoption"
                   id="orderOption03"
                   value="Peinture métallisée"
+                  required
                 />
                 Peinture métallisée
               </label>
@@ -101,6 +108,7 @@
                   name="orderoption"
                   id="orderOption04"
                   value="Lecteur CD"
+                  required
                 />
                 Lecteur CD
               </label>
