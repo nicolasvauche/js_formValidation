@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Bon de commande de véhicule</title>
+
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <script src="js/scripts.js" defer></script>
+  </head>
+  <body>
+    <!-- Main document -->
+    <main>
+      <!-- Form section -->
+      <section>
+        <h1>Bon de commande de véhicule</h1>
+
+        <!-- The form -->
+        <form action="" id="orderForm">
+          <div class="form-group">
+            <label for="orderDate">
+              Date du bon de commande : <small>format JJ/MM/AAAA</small>
+            </label>
+            <input
+              type="date"
+              class="form-control"
+              name="orderdate"
+              id="orderDate"
+            />
+          </div>
+          <div class="form-group">
+            <label for="orderType"> Type de véhicule : </label>
+            <input
+              type="text"
+              class="form-control"
+              name="ordertype"
+              id="orderType"
+              value="Voiture"
+              disabled
+            />
+          </div>
+          <div class="form-group">
+            <label for="orderBrand"> Marque : </label>
+            <select class="form-control" namme="orderbrand" id="orderBrand">
+              <option value="Renault">Renault</option>
+              <option value="Peugeot">Peugeot</option>
+              <option value="Toyota">Toyota</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="orderColor">
+              Couleur - Format hexadécimal : <small>(ex : #fefefe)</small>
+            </label>
+            <input
+              type="text"
+              class="form-control"
+              name="ordercolor"
+              id="orderColor"
+            />
+          </div>
+          <div class="form-group top">
+            <span class="label"> Option : </span>
+            <div class="form-options">
+              <label for="orderOption01">
+                <input
+                  type="radio"
+                  class="form-control"
+                  name="orderoption"
+                  id="orderOption01"
+                  value="Vitres électriques"
+                />
+                Vitres électriques
+              </label>
+              <label for="orderOption02">
+                <input
+                  type="radio"
+                  class="form-control"
+                  name="orderoption"
+                  id="orderOption02"
+                  value="GPS"
+                />
+                GPS
+              </label>
+              <label for="orderOption03">
+                <input
+                  type="radio"
+                  class="form-control"
+                  name="orderoption"
+                  id="orderOption03"
+                  value="Peinture métallisée"
+                />
+                Peinture métallisée
+              </label>
+              <label for="orderOption04">
+                <input
+                  type="radio"
+                  class="form-control"
+                  name="orderoption"
+                  id="orderOption04"
+                  value="Lecteur CD"
+                />
+                Lecteur CD
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="form-submit">
+              Valider le bon de commande
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Recap section -->
+      <section>
+        <h2>Récapitulatif</h2>
+
+        <!-- The recap -->
+        <div class="recap">
+          <p>
+            Date :
+            <span id="recapDate"></span>
+          </p>
+          <p>
+            Type de véhicule :
+            <span id="recapType"></span>
+          </p>
+          <p>
+            Marque :
+            <span id="recapBrand"></span>
+          </p>
+          <p>
+            Couleur :
+            <span id="recapColor"></span>
+          </p>
+          <p>
+            Option :
+            <span id="recapOption"></span>
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

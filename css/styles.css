@@ -1,0 +1,96 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: #888888;
+  background-color: #f3f0f0;
+}
+
+h1,
+h2 {
+  margin: 0 0 1.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: #efefef;
+  border-bottom: 1px solid #cfcfcf;
+}
+
+p {
+  margin: 0 1rem 0.5rem;
+}
+
+body > main {
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+  min-height: 50vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+}
+
+body > main > section {
+  padding: 0 1rem 1rem;
+  border: 1px solid #cfcfcf;
+  border-radius: 0.25rem;
+}
+
+form{
+    margin: 0 1rem;
+}
+
+.form-group {
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+  align-items: center;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #cfcfcf;
+}
+
+.form-group.top {
+  align-items: flex-start;
+}
+
+.form-control {
+  box-sizing: border-box;
+  padding: 0.25rem;
+  width: 100%;
+  font-size: 1rem;
+  color: #888888;
+  background-color: #ffffff;
+  border: 1px solid #cfcfcf;
+  border-radius: 0.25rem;
+}
+
+input[type="date"] {
+  text-transform: uppercase;
+}
+
+input[type="radio"] {
+  margin-top: -1px;
+  margin-right: 0.25rem;
+  width: auto;
+}
+
+.form-control:disabled {
+  border: none;
+}
+
+.form-options label {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0.25rem 0;
+}
+
+.form-submit {
+  box-sizing: border-box;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: rgb(132 132 242);
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
