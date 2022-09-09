@@ -82,13 +82,13 @@ input[type="radio"] {
   border: none;
 }
 
-.form-control:valid {
+/* .form-control:valid {
   border-color: green;
 }
 
 .form-control:invalid {
   border-color: red;
-}
+} */
 
 .form-options label {
   display: flex;

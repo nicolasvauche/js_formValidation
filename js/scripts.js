@@ -1,4 +1,9 @@
-import { validateEmpty, validateChecked } from './modules/formvalidation.js'
+import {
+  validateEmpty,
+  validateChecked,
+  validateDate,
+  validateInList
+} from './modules/formvalidation.js'
 
 const orderForm = document.getElementById('orderForm')
 const acceptedBrands = ['Renault', 'Peugeot', 'Toyota']
@@ -8,7 +13,7 @@ const acceptedOptions = [
   'Peinture métallisée',
   'Lecteur CD'
 ]
-let choosenOption = ''
+let choosenOptionElt = null
 
 orderForm.addEventListener('submit', event => {
   event.preventDefault()
@@ -22,13 +27,33 @@ orderForm.addEventListener('submit', event => {
   )
   let errors = 0
 
-  // Validation du formulaire
-  errors += validateEmpty(orderDateElt)
+  // Validation de la date
+  if (!validateEmpty(orderDateElt)) {
+    errors += validateDate(orderDateElt)
+  } else {
+    errors++
+  }
+
+  // Validation du type
   errors += validateEmpty(orderTypeElt)
-  errors += validateEmpty(orderBrandElt)
+
+  // Validation de la marque
+  if (!validateEmpty(orderBrandElt)) {
+    errors += validateInList(orderBrandElt, acceptedBrands)
+  } else {
+    errors++
+  }
+
+  // Validation de la couleur
   errors += validateEmpty(orderColorElt)
-  choosenOption = validateChecked(orderOptionElts)
-  if (!choosenOption) errors++
+
+  // Validation de l'option
+  choosenOptionElt = validateChecked(orderOptionElts)
+  if (choosenOptionElt) {
+    errors += validateInList(choosenOptionElt, acceptedOptions, true)
+  } else {
+    errors++
+  }
 
   // Traiter le formulaire
   if (errors === 0) {
@@ -45,6 +70,6 @@ orderForm.addEventListener('submit', event => {
     recapColor.innerText = orderColorElt.value
 
     const recapOption = document.getElementById('recapOption')
-    recapOption.innerText = choosenOption ? choosenOption : ''
+    recapOption.innerText = choosenOptionElt ? choosenOptionElt.value : ''
   }
 })
