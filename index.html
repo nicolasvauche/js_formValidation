@@ -20,8 +20,9 @@
 
         <!-- The form -->
         <form action="" id="orderForm" novalidate>
+          
           <div class="form-group">
-            <label for="orderDate">
+            <label for="orderDate" class="required">
               Date du bon de commande : <small>format JJ/MM/AAAA</small>
             </label>
             <input
@@ -32,6 +33,7 @@
               required
             />
           </div>
+
           <div class="form-group">
             <label for="orderType"> Type de véhicule : </label>
             <input
@@ -44,15 +46,16 @@
             />
           </div>
           <div class="form-group">
-            <label for="orderBrand"> Marque : </label>
+            <label for="orderBrand" class="required"> Marque : </label>
             <select class="form-control" name="orderbrand" id="orderBrand" required>
+              <option value="">Choisissez dans la liste</option>
               <option value="Renault">Renault</option>
               <option value="Peugeot">Peugeot</option>
               <option value="Toyota">Toyota</option>
             </select>
           </div>
           <div class="form-group">
-            <label for="orderColor">
+            <label for="orderColor" class="required">
               Couleur - Format hexadécimal : <small>(ex : #fefefe)</small>
             </label>
             <input
@@ -65,7 +68,7 @@
           </div>
 
           <div class="form-group top">
-            <span class="label"> Option : </span>
+            <span class="label required"> Option : </span>
 
             <div class="form-options">
               <label for="orderOption01">

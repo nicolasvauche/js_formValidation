@@ -20,27 +20,31 @@ orderForm.addEventListener('submit', event => {
   const orderOptionElts = document.querySelectorAll(
     '.form-options input[type=radio]'
   )
+  let errors = 0
 
   // Validation du formulaire
-  validateEmpty(orderDateElt)
-  validateEmpty(orderTypeElt)
-  validateEmpty(orderBrandElt)
-  validateEmpty(orderColorElt)
+  errors += validateEmpty(orderDateElt)
+  errors += validateEmpty(orderTypeElt)
+  errors += validateEmpty(orderBrandElt)
+  errors += validateEmpty(orderColorElt)
   choosenOption = validateChecked(orderOptionElts)
+  if (!choosenOption) errors++
 
   // Traiter le formulaire
-  const recapDate = document.getElementById('recapDate')
-  recapDate.innerText = orderDateElt.value
+  if (errors === 0) {
+    const recapDate = document.getElementById('recapDate')
+    recapDate.innerText = orderDateElt.value
 
-  const recapType = document.getElementById('recapType')
-  recapType.innerText = orderTypeElt.value
+    const recapType = document.getElementById('recapType')
+    recapType.innerText = orderTypeElt.value
 
-  const recapBrand = document.getElementById('recapBrand')
-  recapBrand.innerText = orderBrandElt.value
+    const recapBrand = document.getElementById('recapBrand')
+    recapBrand.innerText = orderBrandElt.value
 
-  const recapColor = document.getElementById('recapColor')
-  recapColor.innerText = orderColorElt.value
+    const recapColor = document.getElementById('recapColor')
+    recapColor.innerText = orderColorElt.value
 
-  const recapOption = document.getElementById('recapOption')
-  recapOption.innerText = choosenOption ? choosenOption : ''
+    const recapOption = document.getElementById('recapOption')
+    recapOption.innerText = choosenOption ? choosenOption : ''
+  }
 })
